@@ -10,6 +10,7 @@ import { themeSettings } from "./theme";
 
 function App() {
   const mode = useSelector((state) => state.mode);
+  //useMemo hook is used when we dont want to recalculat things and it will only render the function when one of the value of its dependecies changes 
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
   const isAuth = Boolean(useSelector((state) => state.token));
 
